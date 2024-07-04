@@ -7,40 +7,41 @@
 > Web Based game, utilizing SSR/webSockets and basic css for animation.
 
 **DB**: Mongo
-**FEnd**: ?React? _I want to try something new_ _May be able to static HTML / A Custom framework_
+
+**FEnd**: ?React? _I want to try something new_ _May be able to use static HTML / A Custom framework_
+
 **BEnd**: Golang | Rust
 
 ### Mongo DB
 
-> Ill need to save game states. We could save users for additional features; like: return to game, and points.
+> I'll need to save game states. We could save users for additional features; like: return to game, and points.
 
 #### Game State 🎮 🕹️
 
-```json
-{
-    BoardStacks: CardStack[];
+```yaml
+---
+# Game State
+    BoardStacks: CardStack[]
     Player0: {
-        Hand: Card[];
-        DiscardPiles: CardStack[];
+        Hand: Card[]
+        DiscardStacks: CardStack[]
         StockPile: {
-            TopCard: Card;
-            CardsLeft: Number;
-        };
-    },
+            TopCard: Card
+            CardsLeft: Number
+        }
+    }
     Player1|PlayerGuid: {...}
-}
-
+...
 ```
 
 #### User 🙋🏼
 
-```json
-{
-    Id: Guid;
-    Points: Number;
-    LastGameId: Guid;
-    ...
-}
+```yaml
+---
+# User
+Id: Guid[]
+Points: Number
+LastGameId: GameGuid
 ```
 
 ### FrontEnd
@@ -49,7 +50,7 @@
 
 #### Needs Solving/POC
 
--   Click and drag cards look/Action
+-   Click and drag cards with template/board.
 -   WebSocket structure.
 
 ### BackEnd
