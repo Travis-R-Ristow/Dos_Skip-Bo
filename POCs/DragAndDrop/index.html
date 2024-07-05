@@ -8,9 +8,28 @@
   <body>
     <div id="hand" class="stack">
       Hand Stack
-      <div draggable="true" class="card" ondragstart="console.log('dragMe')">Dragable Card</div>
+      <div
+        class="card"
+        draggable="true"
+        ondragstart="onDrag(event)"
+        data-card="_GUID_12"
+        data-stack="hand"
+      >
+        Dragable Card
+      </div>
     </div>
 
-    <div id="target" class="stack">Board Stack</div>
+    <div
+      class="stack"
+      id="target"
+      ondrop="onDrop(event)"
+      ondragover="onDragHover(event)"
+      data-stack="board"
+    >
+      Board Stack
+    </div>
   </body>
 </html>
+
+<!-- move card - remove/append card -->
+<!-- where/how we call api && handle errors/rollbacks -->

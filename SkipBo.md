@@ -57,8 +57,19 @@ LastGameId: GameGuid
 
 > Maybe use Golang. The server will need to manage multiple GameStates. The server will need to handle and authorize CardActions.
 
+#### GameStates
+
+> The server will need to manage multiple game states, each one holding their respective board and player states.
+
 #### CardActions
 
 > The server will hold the CardAction funtions. Each Action will need to be authorized based on is its current position and its target location.
+
+### Data Flow
+
+#### Move Card
+
+[Auth]
+POST | move-card (cardGuid, currentLocation, targetLocation)
 
 ## Rules
